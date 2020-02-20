@@ -19,12 +19,12 @@ body {
 /* || typography */
 
 h1, h2, h3 {
-  font-family: 'Federant', cursive;
+  font-family: 'Montserrat', sans-serif;
   color: #2a2a2a;
 }
 
 p, input, li {
-  font-family: 'Simonetta', sans-serif;
+  font-family: 'Raleway', sans-serif;
   color: #2a2a2a;
 }
 
