@@ -7,7 +7,7 @@ html, body {
 
 html {
   font-size: 10px;
-  background-color: #FFFFFF;
+  background-color: #a9a9a9;
 }
 
 body {
@@ -19,7 +19,7 @@ body {
 /* || typography */
 
 h1, h2, h3 {
-  font-family: 'Forum', cursive;
+  font-family: 'Cinzel Decorative', cursive;
   color: #2a2a2a;
 }
 
