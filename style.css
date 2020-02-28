@@ -6,21 +6,21 @@ html, body {
 }
 
 html {
-  font-size: 10px;
-  background-color: rgb(0, 38, 255);
+  font-size: 65%;
+  background-color: #d1ae8f;
 }
 
 body {
-  width: 70%;
-  min-width: 800px;
-  margin: 0 auto;
+  width: 100%;
+  min-width: auto;
+  
 }
 
 /* || typography */
 
-h1, h2, h3 {
+h1{
   font-family: 'Montserrat', sans-serif;
-  color: #2a2a2a;
+  color: #e0baba;
 }
 
 p, input, li {
@@ -30,13 +30,13 @@ p, input, li {
 
 h1 {
   font-size: 4rem;
-  text-align: center;
+  text-align: left;
   text-shadow: 2px 2px 10px black;
 }
 
 h2 {
   font-size: 3rem;
-  text-align: center;
+  text-align: left;
 }
 
 h3 {
@@ -50,89 +50,52 @@ p, li {
 
 /* || header layout */
 
-header {
-  margin-bottom: 10px;
+
+
+
+header .two{
+  margin-top: auto;
+  margin-bottom: 5em;
   display: flex;
-  flex-flow: row wrap;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: row wrap;
+  background-color: #861717;
 }
 
 body > * {
-  background-color: red;
-  padding: 1%;
+  background-color: white;
+  padding: 0;
+  
 }
 
-main, header, nav, article, aside, footer, section {
-  background-color: rgba(0,255,0,0.5);
-  padding: 1%;
-}
 
 h1 {
-  flex: 5;
-  text-transform: uppercase;
+  flex: 10;
+  text-transform: none;
+  justify-content: space-around;
 }
 
 header img {
-  display: block;
-  height: 60px;
-  padding-top: 20.15px;
-}
-
-nav {
+  display: flex;
   height: 50px;
-  flex: 100%;
+  padding-top: 10.15px;
+}
+
+
+body {
+  padding: 50px;
+}
+
+.container {
+  border: none;
+  padding: 20px 40px 40px;
+  max-width: 640px;
+  
   display: flex;
 }
-
-nav ul {
-  padding: 0;
-  list-style-type: none;
-  flex: 2;
-  display: flex;
-}
-
-nav li {
-  display: inline;
-  text-align: center;
-  flex: 1;
-}
-
-nav a, nav span {
-  display: inline-block;
-  font-size: 2rem;
-  height: 3rem;
-  line-height: 1.7;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: black;
-
-}
-
-/* || main layout */
-
-main {
-  display: flex;
-}
-
-article, section {
-  flex: 4;
-}
-
-aside {
-  flex: 1;
-  margin-left: 10px;
-  padding: 1%;
-}
-
-aside a {
-  display: block;
-  float: left;
-  width: 50%;
-}
-
-aside img {
-  max-width: 100%;
-}
-
-footer {
-  margin-top: 10px;
+.container__image {
+  margin: 20px 30px 0 0;
+  width: 200px;
+  align-self: flex-start;
 }
