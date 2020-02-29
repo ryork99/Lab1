@@ -1,101 +1,69 @@
-/* || General setup */
-
-html, body {
-  margin: 0;
-  padding: 0;
+.box{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 25px;
 }
 
-html {
-  font-size: 65%;
-  background-color: #d1ae8f;
+
+.second_box{
+    display: flex;
+    
+    margin-top: 25px;
+    justify-content: space-between;
+    background-color: white;
+    align-items: flex-start;
+    padding: 25px;
 }
 
-body {
-  width: 100%;
-  min-width: auto;
+.third_box{
+   display: flex;
+  justify-content: space-between;
+  background-color: white;
+  margin-top: 25px;
+  padding: 25px rosybrown;
   
 }
 
-/* || typography */
+.container{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 960px;
+  
+  border: solid 1px black;
+}
+
+body {
+  background-color: rosybrown;
+  margin: 0%;
+}
+
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  
+  
+
+ 
+}
+
+header .two{
+
+  margin-bottom: 5em;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #861717;
+  padding: 25px;
+}
 
 h1{
   font-family: 'Montserrat', sans-serif;
   color: #e0baba;
 }
 
-p, input, li {
-  font-family: 'Raleway', sans-serif;
-  color: #2a2a2a;
-}
-
-h1 {
-  font-size: 4rem;
-  text-align: left;
-  text-shadow: 2px 2px 10px black;
-}
-
 h2 {
   font-size: 3rem;
   text-align: left;
-}
-
-h3 {
-  font-size: 2.2rem;
-}
-
-p, li {
-  font-size: 1.6rem;
-  line-height: 1.5;
-}
-
-/* || header layout */
-
-
-
-
-header .two{
-  margin-top: auto;
-  margin-bottom: 5em;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  flex-direction: row wrap;
-  background-color: #861717;
-}
-
-body > * {
-  background-color: white;
-  padding: 0;
-  
-}
-
-
-h1 {
-  flex: 10;
-  text-transform: none;
-  justify-content: space-around;
-}
-
-header img {
-  display: flex;
-  height: 50px;
-  padding-top: 10.15px;
-}
-
-
-body {
-  padding: 50px;
-}
-
-.container {
-  border: none;
-  padding: 20px 40px 40px;
-  max-width: 640px;
-  
-  display: flex;
-}
-.container__image {
-  margin: 20px 30px 0 0;
-  width: 200px;
-  align-self: flex-start;
 }
