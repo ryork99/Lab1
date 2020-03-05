@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Robert York's Lab</title>
+    <title>Robert York's Lab 4</title>
     <link rel="stylesheet" type="text/css" href="./style.css" />
   </head>
 
@@ -13,13 +13,15 @@
           Click me to make a change
         </button>
         <div class="content">
-          <p1>
-            my name has 10 characters <br />
-          </p1>
+          <p>
+            Retro fam narwhal hoodie meggings viral bushwick yr chartreuse.
+            Chartreuse seitan banh mi selfies, woke ennui venmo craft beer. Air
+            plant tumeric retro DIY iPhone poutine. +1 gastropub chillwave,
+            cronut glossier pork belly tacos poke next level fanny pack vegan
+            jianbing lo-fi.
+            <br />
+          </p>
 
-          <p2>
-            the third character in my name is <br/>
-          </p2>
         </div>
         <div class="footer"></div>
       </div>
@@ -28,18 +30,23 @@
     <script>
       function clickMe() {
         const content = document.querySelector(".content");
-        content.innerHTML = "my name has 10 characters";
+        content.innerHTML = "Hello World";
+        let name = 'Robert'
+        let lastName= 'York'
+        let fullName = "Robert York"
+        let splitName = fullName.split(" ")
+
+        let nameLength = splitName[0].length+splitName[1].length
+
+        const header = document.querySelector(".header");
+        header.innerHTML= fullName+ "'s"+ " lab 4"+ " "+nameLength;
         
-        
+        let paragraph = document.querySelector(".content")
+        paragraph.innerHTML = "<p>Hello World!</p> <p>My name has "+ nameLength + " "+ "characters</p> <p>The third character in my name is " + name[2].toUpperCase()+"<br>The last three characters of my last name are '" + lastName.slice(-3)+ "' </p>"
+
+
       }
-      let fullName = 'Robert York'.split(' ');
-      let firstName = fullName[0];
-      let lastName = fullName[fullName.length -1];
-      let nameLength = firstName.length+lastName.length;
-
-      const myHeading = document.querySelector('h1');
-      myHeading.textContent = 'Hello world!';
     </script>
-
   </body>
 </html>
+
