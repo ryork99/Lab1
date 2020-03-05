@@ -1,34 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Prof A's Demo Page</title>
+    <title>Robert York's Lab</title>
     <link rel="stylesheet" type="text/css" href="./style.css" />
   </head>
 
   <body>
     <div class="container">
       <div class="wrapper">
-        <div class="header">Prof A's Demo Page</div>
+        <div class="header">Robert York's Lab 4</div>
         <button class="button" onclick="clickMe()">
           Click me to make a change
         </button>
         <div class="content">
-          <p>
-            Retro fam narwhal hoodie meggings viral bushwick yr chartreuse.
-            Chartreuse seitan banh mi selfies, woke ennui venmo craft beer. Air
-            plant tumeric retro DIY iPhone poutine. +1 gastropub chillwave,
-            cronut glossier pork belly tacos poke next level fanny pack vegan
-            jianbing lo-fi.
-          </p>
+          <p1>
+            my name has 10 characters <br />
+          </p1>
+
+          <p2>
+            the third character in my name is <br/>
+          </p2>
         </div>
         <div class="footer"></div>
       </div>
     </div>
+
     <script>
       function clickMe() {
         const content = document.querySelector(".content");
-        content.innerHTML = "Hello world";
+        content.innerHTML = "my name has 10 characters";
+        
+        
       }
+      let fullName = 'Robert York'.split(' ');
+      let firstName = fullName[0];
+      let lastName = fullName[fullName.length -1];
+      let nameLength = firstName.length+lastName.length;
+
+      const myHeading = document.querySelector('h1');
+      myHeading.textContent = 'Hello world!';
     </script>
+
   </body>
 </html>
