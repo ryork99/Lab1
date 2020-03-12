@@ -2,16 +2,16 @@
 <html lang="en">
 
 <head>
-  <title>Test JSON page</title>
+  <title>Robert's List of Countries</title>
   <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
 <body>
   <div class="container">
     <div class="wrapper">
-      <div class="header">Test JSON page</div>
+      <div class="header">Robert's List of Countries</div>
       <!-- <button class="button" onclick="loadData()">Load Some JSON</button> -->
-      <button class="button" onclick="console.log('You haven\'t written a function yet!');">Click me to replace list
+      <button class="button" onclick="loadData()">Click me to replace list
         entries</button>
       <div class="content">
         <ul class="instructions">
@@ -33,7 +33,7 @@
     </div>
   </div>
   <script>
-    /* N.B. - For your lab, use the variable "countries" now available on the window space */
+    
     const countries = [
       { "name": "Afghanistan", "code": "AF" },
       { "name": "Åland Islands", "code": "AX" },
@@ -279,8 +279,35 @@
       { "name": "Zambia", "code": "ZM" },
       { "name": "Zimbabwe", "code": "ZW" }
     ]
-    console.log("List of countries in the world", countries);
+    
+    
+    function randNum(min = 0, max = 242) {
+      return Math.floor(Math.random() * (max - min + 1)) + min; 
+    }
+    function loadData() {
+      var content = document.querySelector(".content");
+      content.innerHTML = ""
+      ol = document.createElement('ol');
+      ol.class_name = "countries";
+      content.appendChild(ol);
 
+      var list = new Set();
+      while (list.size < 25) {
+        random = randNum();
+        list.add(countries[random]);
+      }
+      
+      
+      [...list].sort((a,b) =>  a.name.toUpperCase() >= b.name.toUpperCase() ? 1 : -1 ).forEach((element) => {
+        ol.innerHTML += "<li><strong>" + element["code"] + "</strong> " + element["name"] + "</li>";
+        
+      })
+     
+
+      let unselected = new Set(countries.filter(x => !list.has(x)))
+      console.log([...unselected])
+
+    }
 
 
 
