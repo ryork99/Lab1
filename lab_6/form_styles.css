@@ -1,15 +1,60 @@
-form {
+html{
+    background-color: #EEEEEE;
+}
 
+
+h1{
+    margin: 0 auto;
+    width: 400px;
+    padding: 1em;
+  }
+
+form {
+    margin: 0 auto;
+    width: 400px;
+    padding: 1em;
+    border: 1px solid #CCC;
+}
+
+.container {    
+    margin: 0 auto;
+    width: 400px;
 }
 
 label {
-
+    font-size: 1.2em;
+    display: block;
+    width: 90px;
+    padding: 10px 0px;
 }
 
 input, textarea {
-    
+    font: 1em sans-serif; 
+    width: 300px;
+    box-sizing: border-box;
+    border: 1px solid #999;
+
 }
+
+input:focus, 
+textarea:focus {
+    border-color: #000;
+}
+
+
 
 ul {
-
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
+
+button {
+    background: orange;
+    padding: 15px 20px;
+    border: 2px;
+    border-radius: 12px;
+    font: 1.2em;
+    color: white;
+    margin-top: 1em;
+  }
