@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Lab 9</title>
+  <link rel="stylesheet" type="text/css" href="./styles.css">
+  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="wrapper">
+      <div class="header">Lab 9</div>
+      <div class="content">
+        <div id = "chartContainer" style="height: 800px; width: 100%;"></div>
+      </div>
+      <div class="footer"></div>
+    </div>
+  </div>
+  <script>
+    fetch('/api') // Rather than fetching from PG County, we're going to fetch from our own server.
+    .then((res) => res.json())
+      .then((res) => {
+        console.log(res);
+        const chart = new CanvasJS.Chart('chartContainer', {
+          animationEnabled: true,
+          theme: "dark2",
+          title: {
+            text: "The Quantity of Places to Eat Broken Down by City",
+          },
+          axisX: {
+            labelBackgroundColor: "black",
+            labelFontColor: "white",
+            labelFontSize: 12,
+            margin: 10,
+            interval: 5,
+          },
+          axisY: {
+            interlacedColor: "rgba(1,77,101,.2)",
+            gridColor: "rgba(1,77,101,.1)",
+            scaleBreaks: {
+              type: "wavy",
+              customBreaks: [
+                {
+                  startValue: 5,
+                  endValue: 20,
+                },
+                {
+                  startValue: 15,
+                  endValue: 40,
+                },
+                {
+                  startValue: 30,
+                  endValue: 75,
+                },
+              ],
+            },
+          },
+          data: [
+            {
+              type: "column",
+              dataPoints: res.reformattedData
+            },
+          ],
+        });
+        chart.render();
+      });
+
+  </script>
+</body>
+
+</html>
