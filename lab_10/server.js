@@ -69,7 +69,24 @@ app
         console.log(err);
       });
     }
-  });
+  })
+  .put((req, res) => {
+    console.log("put request done", req.body);
+    if(!req.body.name){
+      console.log(req.body);
+      res.status('500').send('Something Broke!');
+     } else {
+      writeUser(req.body.name, dbSettings)
+      .then((result) => {
+        console.log(result);
+        res.json({"success": true, "message": "updated"});
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    }
+
+});
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}!`);

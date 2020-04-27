@@ -8,18 +8,26 @@
     <div class="wrapper">
       <div class="container">
         <div>
-          <h1 class="header">POST and PUT lab - with Fetch</h1>
+          <h1 class="header">Robert Y Lab</h1>
         </div>
         <div>
           <form class="targetForm" id="labForm">
+
             <label for="name">Name</label>
             <input type="text" id="name" name="name" />
+
+            <label for="zipcode">Zip Code</label>
+            <input type = "text" id ="zipcode" name="zipcode"/>
+          
+         
             <label for="interests">Interests</label>
             <textarea id="interests" name="interests" rows="5" cols="33">
                 Default text says what?
-            </textarea
-            ><br />
+            </textarea><br />
             <button id="formBtn">Submit</button>
+            <br/>
+            <button id="getBtn">Retrieve Data</button>
+
           </form>
         </div>
       </div>
@@ -33,24 +41,59 @@
         const formToSend = new FormData(target);
 
         fetch("/api", {
-          method: "POST",
+          method: "PUT",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify(Object.fromEntries(formToSend)),
         })
-          .then((data) => data.text()) // note: we didn't send JSON, so there's no JSON to get.
-          .then((txtresponse) => {
-            console.log(txtresponse);
-            btn.setAttribute("disabled", true);
-            const br = document.createElement("br");
-            target.append(br);
-            target.append(`${txtresponse}`);
-          });
+
+
+        .then((data) => data.json())
+          .then((jsonresponse) => {
+
+           const msg = document.createElement("p")
+            msg.innerHTML = jsonresponse["message"]
+            target.append(msg)
+
+            btn.setAttribute("disabled", true); 
+          })
+    
       }
+      
+
+      function getData(f){
+        f.preventDefault();
+        const target = document.querySelector("#labForm");
+        const btn = document.querySelector("#formBtn");
+      
+
+      fetch("/api", {
+        method: "Get"
+      })
+      .then((data) => data.json()) 
+        .then((jsonresponse) => {
+          btn.setAttribute("disabled", true); 
+
+      const ol = document.createElement("ol");
+      target.append(ol);
+
+      for(i = 0; i < jsonresponse.length; i++){
+        const li = document.createElement("li"); 
+            li.innerHTML = jsonresponse[i]["name"];
+            ol.append(li); 
+
+          }
+        })
+      }
+      
 
       const formBtn = document.querySelector("#formBtn");
       formBtn.addEventListener("click", sendForm);
+
+      const getBtn = document.querySelector("#getBtn");
+      getBtn.addEventListener("click", getData);
+
     </script>
   </body>
 </html>
